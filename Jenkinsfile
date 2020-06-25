@@ -17,7 +17,6 @@ pipeline {
 
     stage('package') {
       steps {
-        echo 'this is the package job'
         sh 'npm run package'
         archiveArtifacts '**/distribution/*.zip'
       }
