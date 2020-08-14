@@ -1,31 +1,33 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                sh 'npm install'
-            }
-            }
-
-        stage('Test') {
-            steps {
-                echo 'Testing'
-                sh 'npm test'
-            }
-        }
-        stage('Packaging') {
-            steps {
-                echo 'Packaging....'
-                sh 'npm run package'
-            }
-        }
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building..'
+        sh 'npm install'
+      }
     }
-    
-    post{
-       always{
-           echo 'this pipeline has completed'
-}
-}
+
+    stage('Test') {
+      steps {
+        echo 'Testing'
+        sh 'npm test'
+      }
+    }
+
+    stage('Packaging') {
+      steps {
+        echo 'Packaging....'
+        sh 'npm run package'
+        archiveArtifacts '**/distribution/*.zip'
+      }
+    }
+
+  }
+  post {
+    always {
+      echo 'this pipeline has completed'
+    }
+
+  }
 }
