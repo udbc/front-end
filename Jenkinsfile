@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'schoolofdevops/node'
+      image 'schoolofdevops/node:4-alpine'
     }
 
   }
