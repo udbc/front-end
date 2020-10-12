@@ -28,8 +28,8 @@ pipeline {
 
     stage('package') {
       agent {
-        node {
-          label 'node:4-alpine'
+        docker {
+          image 'node:4-alpine'
         }
 
       }
