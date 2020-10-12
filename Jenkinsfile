@@ -40,6 +40,19 @@ pipeline {
       }
     }
 
+    stage('docker build') {
+      steps {
+        script {
+          docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
+            def dockerImage = docker.build("cloudapsar/frontend:v${env.BUILD_ID}", "./")
+            dockerImage.push()
+            dockerImage.push("latest")
+          }
+        }
+
+      }
+    }
+
   }
   tools {
     nodejs 'NodesJS 4.8.6'
