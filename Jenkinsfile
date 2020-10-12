@@ -1,13 +1,25 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('build') {
+      agent {
+        docker {
+          image 'node:4-alpine'
+        }
+
+      }
       steps {
         sh 'npm install'
       }
     }
 
     stage('test') {
+      agent {
+        docker {
+          image 'node:4-alpine'
+        }
+
+      }
       steps {
         sh 'npm install'
         sh 'npm test'
@@ -15,6 +27,12 @@ pipeline {
     }
 
     stage('package') {
+      agent {
+        node {
+          label 'node:4-alpine'
+        }
+
+      }
       steps {
         sh 'npm install'
         sh 'npm run package'
