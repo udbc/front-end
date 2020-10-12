@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       agent {
         docker {
-          image 'node:4-alpine'
+          image 'cloudapsar/frontend:v3'
         }
 
       }
@@ -16,7 +16,7 @@ pipeline {
     stage('test') {
       agent {
         docker {
-          image 'node:4-alpine'
+          image 'cloudapsar/frontend:v3'
         }
 
       }
@@ -29,7 +29,7 @@ pipeline {
     stage('package') {
       agent {
         docker {
-          image 'node:4-alpine'
+          image 'cloudapsar/frontend:v3'
         }
 
       }
