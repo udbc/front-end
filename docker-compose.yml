@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+    frontend:
+      build: .
+      image: eric2007/frontend:v1
+      ports:
+        - 8079
+
