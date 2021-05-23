@@ -1,5 +1,5 @@
 {
-  "name": "mogambo-front-end",
+  "name": "frontend",
   "version": "0.0.2",
   "description": "Front end for mogambo  application.",
   "main": "server.js",
