@@ -9,7 +9,7 @@ Front-end application written in [Node.js](https://nodejs.org/en/) that puts tog
 
 # Setting up Dev Env
 
-Platform : Ubuntu 16.04
+Platform : Ubuntu 18.04
 
 
 ### Common Setup
@@ -223,3 +223,5 @@ make e2e
 # Push
 
 `GROUP=weaveworksdemos COMMIT=test ./scripts/push.sh`
+
+# testing update
