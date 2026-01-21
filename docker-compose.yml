@@ -1,0 +1,8 @@
+version: "3.6"
+
+services:
+  frontend:
+    build: .
+    image: cloudapsar/frontend
+    ports:
+     - 8079
